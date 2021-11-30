@@ -1,9 +1,12 @@
 const express = require("express");
 const app = express();
 
+const index = require("./routes/index");
+const vaccines = require("./routes/vaccines");
+
 app.use(express.json());
 
-app.use((req, res) => {
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
         "Access-Controll-Allow-Headers",
@@ -21,7 +24,10 @@ app.options("/*", (req,res) => {
         "PUT,POST,GET,DELETE,OPTIONS,PATCH"
     );
 
-    res.send('Header config')
+    res.send('Headers Settings');
 });
+
+app.use("/", index);
+app.use("/vaccines", vaccines);
 
 module.exports =  app;
