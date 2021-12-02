@@ -50,7 +50,7 @@ $ npm start
 
 <br/>
 
-If you prefer, you can see the deploy did in [heroku](https://herokuapp.com/).
+If you prefer, you can see the deploy did in [heroku](https://vaccines-api.herokuapp.com/vaccines).
 
 
 <br/>
